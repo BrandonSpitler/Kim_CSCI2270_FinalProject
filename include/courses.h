@@ -21,15 +21,18 @@ struct Section{//a section is a single instance of a Course (e.g., The Spring 20
 struct Course{
     std::string courseName;//the course name (most recent version overrides if different)
     int courseValue;//the course number (e.g., 2270)
+    double avgGrade;
     std::vector<Section> offeredFall;//years offered in fall
     std::vector<Section> offeredSpring;//years offered in spring
     Course *next = NULL;
+    
 
     Course(){};
 
-    Course(std::string newCourseName, int newCourseValue){
+    Course(std::string newCourseName, int newCourseValue,double newAvgGrade){
         courseName = newCourseName;
         courseValue = newCourseValue;
+        avgGrade = newAvgGrade;
     }
 
 };
